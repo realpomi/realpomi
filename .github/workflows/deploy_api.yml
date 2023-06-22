@@ -25,8 +25,7 @@ jobs:
           
       - name: load result to json
         id: api_file
-        with:
-          run: jq result.js -r
+        run: jq result.js -r
           
       - name: Show JSON
         run: echo "api_file ${{ name }}
