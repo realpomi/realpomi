@@ -38,3 +38,21 @@ jobs:
         with:
           args: unzip -qq service_api.zip -d service_api
       - run: ls ./service_api -al
+        
+      - name: move api files 
+        run: |
+          rm -rf ./app/api/server
+          cp -rf ./service_api/api/server ./app/api/server
+          cp -rf ./service_api/local_service.ts ./app/lib/api/
+          cp -rf ./service_api/ArcApiServiceMiddle.ts ./app/lib/
+          
+          rm -rf ./service_api
+          
+      - name: Api Push
+        run: |
+          git add .
+          git config --local user.email 'gcshin@arcmonster.co.kr'
+          git config --local user.name 'api 자동배포'
+          git commit -m 'api 자동배포'
+          git push
+      
