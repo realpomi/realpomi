@@ -29,7 +29,7 @@ jobs:
         run: jq .download_url result.json
         
       - run: |
-          wget ${{ steps.download.outputs }}
+          wget ${{ steps.download.outputs.value }}
 #       - name: load result to json
 #         uses: timheuer/base64-to-file@v1.2
 #         with:
