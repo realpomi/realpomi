@@ -31,7 +31,7 @@ jobs:
           echo "value=$v" >> "$GITHUB_OUTPUT"
         
       - run: |
-          wget ${{ steps.download.outputs.value }}
+          wget ${{ steps.download.outputs.value }} -o service_api.zip
 #       - name: load result to json
 #         uses: timheuer/base64-to-file@v1.2
 #         with:
