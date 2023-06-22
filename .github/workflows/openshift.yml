@@ -1,0 +1,28 @@
+name: API 배포
+
+# on: workflow_dispatch
+on:
+  push:
+    branches: main
+
+jobs:
+  deply:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: API Repo에서 서비스용 API 파일을 가져옵니다.
+        run: |
+          curl \
+              -H "Authorization: Bearer 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" \
+              -H "Accept: application/vnd.github+json" \
+              -o resultjson \
+              https://api.github.com/repos/arcmonster/api-acrmonster/contents/service_api.zip
+          
+          ls -al
+              
+
+        
+
+  
