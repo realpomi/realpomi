@@ -28,4 +28,4 @@ jobs:
         run: jq .api_file result.js -r
           
       - name: Show JSON
-        run: echo "api_file ${{ steps.api_file..outputs }}"
+        run: echo "api_file ${{ steps.api_file.outputs }}"
