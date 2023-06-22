@@ -44,10 +44,12 @@ jobs:
           rm -rf ./app/api/server
           
           mkdir -p ./app/api/server
+          mkdir -p ./app/lib/api
+          ls -al
           
           cp -rf ./service_api/api/server ./app/api/server
           cp -rf ./service_api/local_service.ts ./app/lib/api/
-          cp -rf ./service_api/ArcApiServiceMiddle.ts ./app/lib/
+          cp -rf ./service_api/ArcApiServiceMiddle.ts ./app/lib/api/
           
           rm -rf ./service_api
           
