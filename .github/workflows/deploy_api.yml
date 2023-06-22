@@ -26,7 +26,7 @@ jobs:
           
       - name: Download Url 추출
         id: download
-        run: jq .download_url result.json
+        run: echo "value=jq .download_url result.json" >> "$GITHUB_OUTPUT"
         
       - run: |
           wget ${{ steps.download.outputs.value }}
