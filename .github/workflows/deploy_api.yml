@@ -29,7 +29,7 @@ jobs:
         with:
           fileName: "service_api.zip"
           fileDir: "./"
-          encodedString: ${{ jq .name result.json }}
+          encodedString: jq .name result.content
           
       - run: ls -al
       - uses: montudor/action-zip@v1
