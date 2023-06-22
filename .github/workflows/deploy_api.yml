@@ -23,8 +23,13 @@ jobs:
           
           ls -al
           cat result.json
+          
+      - name: Download Url 추출
+        id: download
+        run: jq .download_url result.json
+        
       - run: |
-          wget ${{ jq .download_url result.json }}
+          wget ${{ steps.download.outputs }}
 #       - name: load result to json
 #         uses: timheuer/base64-to-file@v1.2
 #         with:
