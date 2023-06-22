@@ -52,6 +52,7 @@ jobs:
           cp -rf ./service_api/ArcApiServiceMiddle.ts ./app/lib/api/
           
           sudo rm -rf ./service_api
+          sudo rm ./result.json ./service_api.zip
           
       - name: Api Push
         run: |
