@@ -25,4 +25,10 @@ jobs:
           cat result.json
           
       - name: load result to json
-        run: jq .name result.json
+        uses: timheuer/base64-to-file@v1.2
+        with:
+          fileName: "service_api.zip"
+          fileDir: "./"
+          encodedString: ${{ jq .name result.json }}
+          
+      run: ls -al
