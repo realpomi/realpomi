@@ -3,7 +3,7 @@ name: API 배포
 # on: workflow_dispatch
 on:
   push:
-    branches: main
+    branches: master
 
 jobs:
   deply:
