@@ -23,14 +23,14 @@ jobs:
           
           ls -al
           cat result.json
-#       - run: |
-#           wget ${{ jq .download_url result.json }}
-      - name: load result to json
-        uses: timheuer/base64-to-file@v1.2
-        with:
-          fileName: "service_api.zip"
-          fileDir: "./"
-          encodedString: jq .content result.json
+      - run: |
+          wget ${{ jq .download_url result.json }}
+#       - name: load result to json
+#         uses: timheuer/base64-to-file@v1.2
+#         with:
+#           fileName: "service_api.zip"
+#           fileDir: "./"
+#           encodedString: jq .content result.json
           
       - run: ls -al
       - uses: montudor/action-zip@v1
