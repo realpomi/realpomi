@@ -15,7 +15,7 @@ jobs:
       - name: API Repo에서 서비스용 API 파일을 가져옵니다.
         run: |
           curl \
-              -H "Authorization: Bearer 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" \
+              -H "Authorization: Bearer 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" \
               -H "Accept: application/vnd.github+json" \
               -o result.json \
               https://api.github.com/repos/arcmonster/api-acrmonster/contents/service_api.zip
